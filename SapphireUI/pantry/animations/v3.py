@@ -4,7 +4,7 @@ import reflex as rx
 def animation_v3() -> rx.Component:
     return rx.vstack(
         rx.heading(
-            "buridan/ui",
+            "SapphireUI",
             size="5",
             font_weight="900",
             style={

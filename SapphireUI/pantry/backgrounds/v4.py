@@ -11,7 +11,7 @@ def background_v4():
             height="65vh",
         ),
         rx.center(
-            rx.heading("Buridan UI", size="7", weight="bold", z_index="20"),
+            rx.heading("SapphireUI", size="7", weight="bold", z_index="20"),
             position="absolute",
             top="50%",
             left="50%",

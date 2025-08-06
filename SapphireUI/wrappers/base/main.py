@@ -119,7 +119,7 @@ def _create_theme_option(name: str, color_class: str):
         rx.el.div(
             rx.el.button(
                 f"{name}  ",
-                class_name="w-full text-left",
+                class_name="w-full text-left ",
                 type="button",
             ),
             rx.el.div(
@@ -151,7 +151,7 @@ def _create_theme_content():
 
     return rx.box(
         *content_items,
-        class_name="bg-background w-[160px] flex flex-col text-sm rounded-md shadow-md",
+        class_name=" backdrop-blur-lg  w-[160px] flex flex-col text-sm rounded-md shadow-md",
     )
 
 

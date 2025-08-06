@@ -4,10 +4,9 @@ import reflex as rx
 def animation_v4() -> rx.Component:
     return rx.vstack(
         rx.heading(
-            "buridan/ui",
+            "SapphireUI",
             size="6",
             font_weight="900",
-            color="#0ff",
             style={
                 "fontFamily": "monospace",
                 "letterSpacing": "0.1em",
@@ -31,7 +30,6 @@ def animation_v4() -> rx.Component:
         ),
         width="100%",
         height="20em",
-        bg="#000",
         align="center",
         justify="center",
     )
