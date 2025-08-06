@@ -1,0 +1,13 @@
+[project]
+name = "sapphireui"
+version = "0.1.0"
+description = "SAPPHIRE UI – A Reflex-based UI component library"
+authors = [{ name = "Sumangal Karan", email = "sumangalkaran44@gmail.com" }]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+  "black>=25.1.0",
+  "pre-commit>=4.2.0",
+  "pytest>=8.4.1",
+  "reflex>=0.8.5",
+]
