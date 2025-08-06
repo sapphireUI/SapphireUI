@@ -46,7 +46,7 @@ Buridan UI has a development mode that allows you to work on specific components
 
 ## Project Structure
 
-- `buridan_ui/`: Main package directory
+- `SapphireUI/`: Main package directory
   - `pantry/`: UI components organized by category (cards, sidebars, etc.)
   - `charts/`: Chart components (bar, line, pie, etc.)
   - `pro/`: Pro components for paid/premium features
@@ -64,7 +64,7 @@ Components are organized by category (e.g., sidebars, cards) and version number.
 2. Create a new version file in the appropriate directory:
 
 ```python
-# Example: buridan_ui/pantry/sidebars/v3.py
+# Example: SapphireUI/pantry/sidebars/v3.py
 
 import reflex as rx
 
@@ -129,12 +129,12 @@ Make sure to uncomment out the exports after you run the script.
 
 The process for adding charts is similar to adding components:
 
-1. Create your chart in `buridan_ui/charts/[chart_type]/v[number].py`
+1. Create your chart in `SapphireUI/charts/[chart_type]/v[number].py`
 2. Update the chart configuration in `export.py`
 3. Add routes and metadata for your chart
 
 ```python
-# Example: buridan_ui/charts/new_chart/v1.py
+# Example: SapphireUI/charts/new_chart/v1.py
 import reflex as rx
 
 def new_chart_v1():
@@ -149,7 +149,7 @@ def new_chart_v1():
 
 Pro components follow a similar pattern but go in the `pro/` directory:
 
-1. Create your component in `buridan_ui/pro/[component_type]/v[number].py`
+1. Create your component in `SapphireUI/pro/[component_type]/v[number].py`
 2. Update the PRO configuration in `export.py`
 3. Add routes and metadata for your pro component
 
