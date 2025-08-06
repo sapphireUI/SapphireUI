@@ -227,4 +227,4 @@ If you need assistance or have questions about contributing, please:
 - Reach out to the maintainers
 - Check existing documentation and examples
 
-Thank you for contributing to Buridan UI!
+Thank you for contributing to SapphireUI!
