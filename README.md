@@ -8,11 +8,11 @@ Pre-designed UI components built with Reflex. Easily copy and paste into your ow
 
 ## Pantry
 
-Visit the [Pantry](https://sapphireui-teal-book.reflex.run//pantry/accordions/) section to view the available pre-built components.
+Visit the [Pantry](https://sapphireui-teal-book.reflex.run/pantry/accordions/) section to view the available pre-built components.
 
 ## Charts
 
-Visit the [Charts](https://sapphireui-teal-book.reflex.run//charts/area-charts/) section to view the available pre-built charts for data visualization.
+Visit the [Charts](https://sapphireui-teal-book.reflex.run/charts/area-charts/) section to view the available pre-built charts for data visualization.
 
 ## Contributing
 
