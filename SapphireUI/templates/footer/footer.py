@@ -45,7 +45,7 @@ def footer():
                 class_name="text-sm font-bold",
             ),
             rx.el.label(
-                "© 2024 - 2025 Ahmad Hakim. All rights reserved.",
+                "© 2024 - 2025 Sumangal Karan. All rights reserved.",
                 class_name="text-sm font-light",
             ),
             width="100%",
