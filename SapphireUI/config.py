@@ -3,7 +3,7 @@ import os
 VERSION = "v0.1.0"
 NAME = "SapphireUI"
 
-SAPPHIREUI_URL = "https://sapphire-ui.reflex.run/"
+SAPPHIREUI_URL = "https://sapphireui-teal-book.reflex.run/"
 SAPPHIREUI_SLOGAN = (
     "Beautifully designed Reflex components to build your web apps faster. Open source."
 )
