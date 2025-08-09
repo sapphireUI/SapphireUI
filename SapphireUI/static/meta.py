@@ -13,7 +13,7 @@ PantryMetaData = {
     "sidebars": ["Apr 06, 2025", "Aug 06, 2025", 1],
     "accordions": ["Mar 30, 2025", "Aug 06, 2025", 1],
     "animations": ["Dec 12, 2024", "Aug 06, 2025", 5],
-    "backgrounds": ["Dec 12, 2024", "Aug 06, 2025", 5],
+    "backgrounds": ["Dec 12, 2024", "Aug 06, 2025", 9],
     "cards": ["Dec 12, 2024", "Aug 06, 2025", 4],
     "faq": ["Dec 12, 2024", "Aug 06, 2025", 1],
     "featured": ["Dec 12, 2024", "Aug 06, 2025", 2],

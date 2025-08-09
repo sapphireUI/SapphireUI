@@ -59,7 +59,7 @@ class ExportConfig:
             "sidebars": ComponentConfig(range(1, 2), "sidebar"),
             "accordions": ComponentConfig(range(1, 2), "accordion"),
             "animations": ComponentConfig(range(1, 5), "animation"),
-            "backgrounds": ComponentConfig(range(1, 6), "background"),
+            "backgrounds": ComponentConfig(range(1, 10), "background"),
             "cards": ComponentConfig(range(1, 5), "card"),
             "faq": ComponentConfig([1], "faq"),
             "featured": ComponentConfig(range(1, 3), "featured"),
