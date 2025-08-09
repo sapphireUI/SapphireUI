@@ -1,6 +1,6 @@
 [project]
 name = "sapphireui"
-version = "0.1.0"
+version = "0.1.2"
 description = "SapphireUI – A Reflex-based UI component library"
 authors = [{ name = "Sumangal Karan", email = "sumangalkaran44@gmail.com" }]
 readme = "README.md"
