@@ -1,6 +1,6 @@
 import os
 
-VERSION = "v0.1.0"
+VERSION = "v0.1.2"
 NAME = "SapphireUI"
 
 SAPPHIREUI_URL = "https://sapphireui-teal-book.reflex.run/"

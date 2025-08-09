@@ -18,7 +18,7 @@ tailwind_config = {
 
 config = rx.Config(
     app_name="SapphireUI",
-    app_version="0.1.0",
+    app_version="0.1.2",
     plugins=[
         rx.plugins.SitemapPlugin(),
         rx.plugins.TailwindV4Plugin(),
