@@ -1,25 +1,38 @@
-name: Publish to PyPI
+name: Publish SapphireUI to PyPI
 
 on:
-  push:
-    tags:
-      - "v*"
+  release:
+    types: [published]
 
 jobs:
-  build:
+  publish:
+    name: Publish package
     runs-on: ubuntu-latest
+
+    # Required for Trusted Publisher (OIDC)
+    permissions:
+      id-token: write
+      contents: read
+
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: 3.11
-      - name: Install dependencies
-        run: pip install build twine
+          python-version: "3.11"
+
+      - name: Install build tools
+        run: |
+          pip install build
+
       - name: Build package
-        run: python -m build
-      - name: Publish package
-        run: python -m twine upload dist/*
-        env:
-          TWINE_USERNAME: __token__
-          TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
+        run: |
+          python -m build
+
+      - name: Publish to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          user: __token__
+          password: ${{ secrets.PYPI_API_TOKEN }}
