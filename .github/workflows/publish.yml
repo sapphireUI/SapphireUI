@@ -8,8 +8,6 @@ jobs:
   publish:
     name: Build & Publish to PyPI
     runs-on: ubuntu-latest
-
-    # Required for PyPI Trusted Publisher (OIDC)
     permissions:
       id-token: write
       contents: read
@@ -29,5 +27,5 @@ jobs:
       - name: Build package
         run: uv build
 
-      - name: Publish to PyPI (Trusted Publisher)
+      - name: Publish to PyPI
         run: uv publish --trusted-publisher
