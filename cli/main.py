@@ -11,7 +11,7 @@ app.add_typer(add_app, name="add")
 
 # --- Constants ---
 REPO_URL = "https://github.com/sapphireUI/SapphireUI.git"
-CACHE_DIR = pathlib.Path.home() / ".sapphire" / "repo"
+CACHE_DIR = pathlib.Path.home() / ".sapphireui" / "repo"
 
 # Source directories from the cloned repo
 BASE_UI_DIR = CACHE_DIR / "src" / "docs" / "library" / "base_ui"

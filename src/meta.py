@@ -1,4 +1,4 @@
-SAPPHIREUI_URL = "https://sapphire-ui.reflex.run/"
+SAPPHIREUI_URL = "https://sapphireui-blue-book.reflex.run/"
 SAPPHIREUI_SLOGAN = (
     "Beautifully designed Reflex components to build your web apps faster. Open source."
 )

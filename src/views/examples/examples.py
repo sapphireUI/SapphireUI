@@ -466,7 +466,7 @@ def input_type_one():
 
 def input_type_two():
     return input_with_addons(
-        placeholder="@buridan",
+        placeholder="@SapphireUI",
         suffix=button(
             rx.icon("check", size=10),
             size="icon-sm",
@@ -791,7 +791,7 @@ def component():
                         rx.el.img(
                             data_slot="avatar-image",
                             class_name="aspect-square size-full",
-                            src="https://avatars.githubusercontent.com/u/84860195?v=4",
+                            src="https://avatars.githubusercontent.com/u/224980531?s=400&u=c5d05d850c7a0a918342cb95ad434c9ec6302c86&v=4",
                         ),
                         data_slot="avatar",
                         class_name="relative flex size-8 shrink-0 overflow-hidden rounded-full",
@@ -801,7 +801,7 @@ def component():
                         rx.el.img(
                             data_slot="avatar-image",
                             class_name="aspect-square size-full",
-                            src="https://avatars.githubusercontent.com/u/198465274?s=200&v=4",
+                            src="https://avatars.githubusercontent.com/u/123644743?s=400&u=4544a6bb80651d28bc3f2f5464ff551c9e4aee68&v=4",
                         ),
                         data_slot="avatar",
                         class_name="relative flex size-8 shrink-0 overflow-hidden rounded-full",

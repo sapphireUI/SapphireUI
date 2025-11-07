@@ -31,7 +31,7 @@ reflex --version
 The Buridan UI CLI allows you to easily add components to your Reflex project.
 
 ```bash
-pip install SapphireUI
+pip install sapphireui
 ```
 
 # Create or navigate to your Reflex Web Application

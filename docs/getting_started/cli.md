@@ -13,12 +13,12 @@ The Buridan UI CLI is a powerful tool designed to streamline the process of addi
 If you haven't already, install the Buridan UI CLI using pip:
 
 ```bash
-pip install sapphire
+pip install sapphireui
 ```
 
 ## Usage Context
 
-All `sapphire` CLI commands must be run from the root directory of your Reflex project. This is typically the directory where your `rxconfig.py` file is located. The CLI uses this file to identify your project and its structure.
+All `sapphireui` CLI commands must be run from the root directory of your Reflex project. This is typically the directory where your `rxconfig.py` file is located. The CLI uses this file to identify your project and its structure.
 
 # Commands
 
@@ -27,7 +27,7 @@ All `sapphire` CLI commands must be run from the root directory of your Reflex p
 This command displays all available components, wrapped React components, and themes from the Buridan UI library. It's useful for discovering what's available before adding it to your project.
 
 ```bash
-sapphire  list
+sapphireui  list
 ```
 
 **Example Output:**
@@ -55,20 +55,20 @@ Listing available items from repository...
 
 # add
 
-The `sapphire add` command is used to bring specific items from the Buridan UI library into your project. It has several subcommands for different types of items.
+The `sapphireui add` command is used to bring specific items from the Buridan UI library into your project. It has several subcommands for different types of items.
 
-## sapphire add component <name>
+## sapphireui add component <name>
 
 Adds a standard sapphire UI component and its Python utility dependencies to your project.
 
 ```bash
-sapphire add component button
+sapphireui add component button
 ```
 
 **Example:** To add the `button` component:
 
 ```bash
-sapphire add component button
+sapphireui add component button
 ```
 
 This command will:
@@ -76,18 +76,18 @@ This command will:
 *   Validate that you are in a Reflex project.
 *   Add the `button.py` component and its necessary utility dependencies (like `twmerge.py`) to your `your_app_name/components/ui/` directory.
 
-## sapphire add wrapped-react <name>
+## sapphireui add wrapped-react <name>
 
 Adds a wrapped React component (a Python wrapper around a React component) and its Python utility dependencies to your project.
 
 ```bash
-sapphire add wrapped-react simple_icon
+sapphireui add wrapped-react simple_icon
 ```
 
 **Example:** To add the `simple_icon` wrapped React component:
 
 ```bash
-sapphire add wrapped-react simple_icon
+sapphireui add wrapped-react simple_icon
 ```
 
 This command will:
@@ -95,18 +95,18 @@ This command will:
 *   Validate that you are in a Reflex project.
 *   Add the `simple_icon.py` component and its necessary utility dependencies to your `your_app_name/components/ui/` directory.
 
-## sapphire add theme <name>
+## sapphireui add theme <name>
 
 Adds a CSS theme (including both light and dark variants) to your project's `assets/css/` directory.
 
 ```bash
-sapphire add theme blue
+sapphireui add theme blue
 ```
 
 **Example:** To add the `blue` theme:
 
 ```bash
-sapphire add theme blue
+sapphireui add theme blue
 ```
 
 This command will:
