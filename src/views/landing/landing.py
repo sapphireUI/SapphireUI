@@ -22,7 +22,7 @@ def sub_header():
     return rx.box(
         rx.el.p(
             rx.fragment(
-                rx.el.strong("Buridan UI"),
+                rx.el.strong("Sapphire UI"),
                 " gives you ",
                 rx.el.strong("composable, themeable components"),
                 " designed for Reflex. ",

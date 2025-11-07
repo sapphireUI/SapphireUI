@@ -3,12 +3,12 @@ from src.docs.library.base_ui.components.base.button import button
 import src.hooks as hooks
 
 THEME_OPTIONS = [
-    ("Hematite", "فيْروز", "gray"),
-    ("Feyrouz", "فيْروز", "blue"),
-    ("Yaqout", "يَاقوت", "red"),
-    ("Zumurrud", "زُمُرُّد", "green"),
-    ("Kahraman", "كَهْرَمان", "amber"),
-    ("Amethyst", "أَمِيثِسْت", "purple"),
+    ("Hematite", "gray"),
+    ("Feyrouz", "blue"),
+    ("Yaqout", "red"),
+    ("Zumurrud", "green"),
+    ("Kahraman", "amber"),
+    ("Amethyst", "purple"),
 ]
 
 
@@ -36,7 +36,7 @@ def theme_buttons():
                         "",
                     ).to(str),
                 )
-                for name, __, theme_class in THEME_OPTIONS
+                for name, theme_class in THEME_OPTIONS
             ],
             class_name=(
                 "w-full flex flex-row flex-wrap gap-4 items-center "

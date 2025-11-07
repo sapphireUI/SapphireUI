@@ -40,7 +40,7 @@ def _run_git_command(command: list[str], cwd: pathlib.Path | None = None):
 
 
 def _update_repo():
-    """Clones or pulls the Buridan UI repository."""
+    """Clones or pulls the SapphireUI repository."""
     typer.secho("Updating component library...", fg=typer.colors.YELLOW)
     if not CACHE_DIR.exists():
         typer.echo(f"Cloning repository into {CACHE_DIR}...")
@@ -347,7 +347,7 @@ def _get_app_name() -> str:
             "Error: Could not find 'app_name' in rxconfig.py.", fg=typer.colors.RED
         )
         raise typer.Exit(1)
-    return app_name
+    return str(app_name)
 
 
 def _check_reflex_project():

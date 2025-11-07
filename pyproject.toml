@@ -3,8 +3,8 @@ requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "SapphireUI"
-version = "0.7.7-beta"
+name = "sapphire"
+version = "0.3.3-beta"
 description = "SapphireUI – The UI Library for Reflex Developers"
 authors = [{ name = "sumangal karan", email = "sumangalkaran44@gmail.com" }]
 readme = "README.md"
@@ -14,11 +14,13 @@ dependencies = [
     "pre-commit>=4.2.0",
     "black>=25.1.0",
     "typer>=0.12.3",
+    "sapphire>=0.3.3b0"
+    
     
 ]
 
 [project.scripts]
-SapphireUI = "cli.main:app"
+sapphire = "cli.main:app"
 
 [tool.setuptools.packages.find]
 where = ["."]

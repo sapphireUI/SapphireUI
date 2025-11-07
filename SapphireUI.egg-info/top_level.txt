@@ -1,7 +1,0 @@
-SapphireUI
-assets
-cli
-docs
-scripts
-src
-test

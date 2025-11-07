@@ -9,7 +9,7 @@ __pycache__/
 assets/external/
 .vercel
 dist/
-buridan_ui.egg-info
+sapphire.egg-info
 .reflex_ui_cache/
 src/components/
 assets/docs/-components/

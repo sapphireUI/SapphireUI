@@ -5,26 +5,26 @@ from ...base_ui.components.base.avatar import avatar
 def avatar_example():
     return rx.box(
         avatar(
-            src="https://avatars.githubusercontent.com/u/84860195?v=4",
-            alt="@LineIndent",
-            fallback="CN",
+            src="https://avatars.githubusercontent.com/u/123644743?s=400&u=4544a6bb80651d28bc3f2f5464ff551c9e4aee68&v=4",
+            alt="@sumangal44",
+            fallback="SU",
         ),
         avatar(
-            src="https://avatars.githubusercontent.com/u/198465274?s=200&v=4",
-            alt="@buridan-ui",
-            fallback="BUI",
+            src="https://avatars.githubusercontent.com/u/224980531?s=400&u=c5d05d850c7a0a918342cb95ad434c9ec6302c86&v=4",
+            alt="@SapphireUI",
+            fallback="SUI",
             class_name="rounded-lg",
         ),
         rx.box(
             avatar(
                 src="",
-                alt="@buridan-ui",
-                fallback="BU",
+                alt="@SapphireUI",
+                fallback="SUI",
             ),
             avatar(
-                src="https://avatars.githubusercontent.com/u/84860195?v=4",
-                alt="@buridan-ui",
-                fallback="BUI",
+                src="https://avatars.githubusercontent.com/u/224980531?s=400&u=c5d05d850c7a0a918342cb95ad434c9ec6302c86&v=4",
+                alt="@SapphireUI",
+                fallback="SUI",
             ),
             avatar(
                 src="https://avatars.githubusercontent.com/u/104714959?s=200&v=4",
@@ -83,9 +83,9 @@ def avatar_with_badge():
     return rx.box(
         rx.box(
             avatar(
-                src="https://avatars.githubusercontent.com/u/84860195?v=4",
-                alt="@LineIndent",
-                fallback="CN",
+                src="https://avatars.githubusercontent.com/u/123644743?s=400&u=4544a6bb80651d28bc3f2f5464ff551c9e4aee68&v=4",
+                alt="@sumangal44",
+                fallback="SU",
                 class_name="size-12",
             ),
             rx.box(
