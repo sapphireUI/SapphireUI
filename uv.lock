@@ -710,7 +710,7 @@ wheels = [
 ]
 
 [[package]]
-name = "sapphire"
+name = "sapphireui"
 version = "0.3.3b0"
 source = { editable = "." }
 dependencies = [
@@ -725,7 +725,7 @@ requires-dist = [
     { name = "black", specifier = ">=25.1.0" },
     { name = "pre-commit", specifier = ">=4.2.0" },
     { name = "reflex", specifier = ">=0.8.17" },
-    { name = "sapphire", specifier = ">=0.3.3b0" },
+    { name = "sapphireui", specifier = ">=0.3.3b0" },
     { name = "typer", specifier = ">=0.12.3" },
 ]
 
