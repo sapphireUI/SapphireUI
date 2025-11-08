@@ -1,4 +1,5 @@
 # SapphireUI
+[![Publish SapphireUI to PyPI](https://github.com/sapphireUI/SapphireUI/actions/workflows/publish.yml/badge.svg)](https://github.com/sapphireUI/SapphireUI/actions/workflows/publish.yml)
 
 Pre-designed UI components built with Reflex. Easily copy and paste into your own app.
 

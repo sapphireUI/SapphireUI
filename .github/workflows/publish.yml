@@ -28,4 +28,16 @@ jobs:
         run: uv build
 
       - name: Publish to PyPI
-        run: uv publish --trusted-publisher
+        run: uv publish --trusted-publishing pypi
+        env:
+          PYPI_API_TOKEN: ${{ secrets.PYPI_API_TOKEN }}
+      - name: Verify publication
+        run: |
+          PACKAGE_NAME="sapphireui"
+          VERSION="${{ github.event.release.tag_name }}"
+          pip install "${PACKAGE_NAME}==${VERSION}"
+          python -c "import sapphireui; print(sapphireui.__version__)"
+        env:
+          PYPI_API_TOKEN: ${{ secrets.PYPI_API_TOKEN }}
+      - name: Clean up
+        run: uv clean
