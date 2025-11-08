@@ -12,7 +12,7 @@ Custom skeleton component.
 
 Copy the following code into your app directory.
 
---CLI_AND_MANUAL_INSTALLATION(["skeleton_component", "buridan add component skeleton"])--
+--CLI_AND_MANUAL_INSTALLATION(["skeleton_component", "sapphireui add component skeleton"])--
 
 # Usage
 

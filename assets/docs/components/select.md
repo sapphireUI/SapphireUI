@@ -12,7 +12,7 @@ Copy the following code into your app directory.
 ### CLI
 
 ```bash
-buridan add component select
+sapphireui add component select
 ```
 
 ### Manual Installation
@@ -44,16 +44,16 @@ LiteralOrientation = Literal["horizontal", "vertical"]
 class ClassNames:
     """Class names for select components."""
 
-    TRIGGER = "flex min-w-48 items-center justify-between gap-3 select-none text-sm [&>span]:line-clamp-1 cursor-pointer focus:outline-none focus-visible:ring-1 focus-visible:ring-primary-4 group/trigger"
-    VALUE = "flex-1 text-left"
+    TRIGGER = "border-input data-[placeholder]:text-muted-foreground [&_svg:not([class*='text-'])]:text-muted-foreground focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:bg-input/30 dark:hover:bg-input/50 flex w-fit items-center justify-between gap-2 rounded-md border bg-transparent px-3 py-2 text-sm whitespace-nowrap shadow-xs transition-[color,box-shadow] outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50 data-[size=default]:h-9 data-[size=sm]:h-8 *:data-[slot=select-value]:line-clamp-1 *:data-[slot=select-value]:flex *:data-[slot=select-value]:items-center *:data-[slot=select-value]:gap-2 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"
+    VALUE = "flex-1 text-left cursor-default"
     ICON = "flex size-4 text-secondary-10 group-data-[disabled]/trigger:text-current"
-    POPUP = "group/popup max-h-[17.25rem] overflow-y-auto origin-(--transform-origin) p-1 border border-secondary-a4 bg-secondary-1 shadow-large transition-[transform,scale,opacity] data-[ending-style]:scale-95 data-[starting-style]:scale-95 data-[ending-style]:opacity-0 data-[starting-style]:opacity-0 outline-none scrollbar-thin scrollbar-thumb-secondary-9 scrollbar-track-transparent"
-    ITEM = "grid min-w-(--anchor-width) grid-cols-[1fr_auto] items-center gap-2 text-sm select-none font-[450] group-data-[side=none]/popup:min-w-[calc(var(--anchor-width)+1rem)] data-[selected]:text-secondary-12 text-secondary-11 cursor-pointer placeholder:text-secondary-9 data-[selected]:font-medium outline-none data-[highlighted]:bg-secondary-3 scroll-m-1"
-    ITEM_INDICATOR = "text-current"
+    POPUP = "bg-popover/80 text-popover-foreground data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 relative z-50 max-h-(--radix-select-content-available-height) min-w-[8rem] origin-(--radix-select-content-transform-origin) overflow-x-hidden overflow-y-auto rounded-md border border-input shadow-md"
+    ITEM = "focus:bg-accent focus:text-accent-foreground [&_svg:not([class*='text-'])]:text-muted-foreground relative flex w-full cursor-default items-center gap-2 rounded-sm py-1.5 px-2 text-sm outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 *:[span]:last:flex *:[span]:last:items-center *:[span]:last:gap-2"
+    ITEM_INDICATOR = ""
     ITEM_TEXT = "text-start"
     GROUP = "p-1"
-    GROUP_LABEL = "px-2 py-1.5 text-sm font-semibold"
-    SEPARATOR = "-mx-1 my-1 h-px bg-muted"
+    GROUP_LABEL = "text-muted-foreground px-2 py-1.5 text-xs"
+    SEPARATOR = "bg-border pointer-events-none -mx-1 my-1 h-px"
     ARROW = "data-[side=bottom]:top-[-8px] data-[side=left]:right-[-13px] data-[side=left]:rotate-90 data-[side=right]:left-[-13px] data-[side=right]:-rotate-90 data-[side=top]:bottom-[-8px] data-[side=top]:rotate-180"
     POSITIONER = "outline-none"
     SCROLL_ARROW_UP = "top-0 z-[1] flex h-4 w-full cursor-default items-center justify-center rounded-ui-md bg-secondary-1 text-center text-xs before:absolute before:top-[-100%] before:left-0 before:h-full before:w-full before:content-[''] data-[direction=down]:bottom-0 data-[direction=down]:before:bottom-[-100%]"
@@ -574,7 +574,7 @@ class HighLevelSelect(SelectRoot):
                         class_name=cn(
                             ClassNames.POPUP,
                             "",
-                            # f"rounded-[calc(var(--radius-ui-{size})+0.25rem)]",
+                            "rounded-radius",
                         ),
                     ),
                     **positioner_props,
@@ -622,50 +622,53 @@ Make sure to correctly set your imports relative to the component.
 from components.base_ui.select import select
 ```
 
-# Examples
-
-Below are examples demonstrating how the component can be used.
-
-## General
+# Example
 
 
 ```python
 def select_example():
     """A basic select example."""
-    return select(
-        items=["Apple", "Banana", "Orange", "Grape"],
-        placeholder="Select a fruit",
-        class_name="w-48",
-    )
-```
 
-
-## With Default Value
-
-
-```python
-def select_with_default_value():
-    """Select example with a default value."""
-    return select(
-        items=["Apple", "Banana", "Orange", "Grape"],
-        placeholder="Select a fruit",
-        default_value="Banana",
-        class_name="w-48",
-    )
-```
-
-
-## Disabled
-
-
-```python
-def select_disabled():
-    """A disabled select example."""
-    return select(
-        items=["Apple", "Banana", "Orange", "Grape"],
-        placeholder="Select a fruit",
-        disabled=True,
-        class_name="w-48",
+    return select.root(
+        select.trigger(
+            select.value(),
+            hi(
+                "Add01Icon",
+                class_name="size-4 transition-transform duration-50 ease-in-out group-aria-[expanded=true]:rotate-45",
+            ),
+            class_name="w-[180px] flex items-center justify-between group",
+        ),
+        select.portal(
+            select.positioner(
+                select.popup(
+                    select.group(
+                        select.group_label("Fruit"),
+                        *[
+                            select.item(
+                                select.item_text(fruit.capitalize()),
+                                select.item_indicator(
+                                    hi("Tick02Icon", class_name="size-4")
+                                ),
+                                value=fruit.capitalize(),
+                                class_name="w-full flex flex-row items-center justify-between",
+                            )
+                            for fruit in [
+                                "apple",
+                                "banana",
+                                "orange",
+                                "grape",
+                                "blueberry",
+                                "pineapple",
+                            ]
+                        ],
+                    ),
+                    class_name="w-[180px]",
+                ),
+                side_offset=4,
+            ),
+        ),
+        name="example_select",
+        default_value="Select a fruit",
     )
 ```
 

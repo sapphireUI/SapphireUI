@@ -12,7 +12,7 @@ Custom scroll area component.
 
 Copy the following code into your app directory.
 
---CLI_AND_MANUAL_INSTALLATION(["ScrollArea", "buridan add component scroll_area"])--
+--CLI_AND_MANUAL_INSTALLATION(["ScrollArea", "sapphireui add component scroll_area"])--
 
 # Usage
 

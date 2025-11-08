@@ -12,7 +12,7 @@ Copy the following code into your app directory.
 ### CLI
 
 ```bash
-buridan add component context_menu
+sapphireui add component context_menu
 ```
 
 ### Manual Installation

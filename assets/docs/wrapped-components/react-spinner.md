@@ -12,7 +12,7 @@ Add the following wrapped react code in Reflex inside your app.
 ### CLI
 
 ```bash
-buridan add wrapped-react react_spinner
+sapphireui add wrapped-react react_spinner
 ```
 
 ### Manual Installation

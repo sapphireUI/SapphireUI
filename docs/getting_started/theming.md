@@ -6,7 +6,7 @@ order: 3
 
 # Introduction
 
-Buridan UI includes built-in support for **chart theming** using CSS variables and the `oklch()` color format — giving you full control over chart palettes in both light and dark modes. Themes are defined at the CSS level and can be easily extended or customized.
+Sapphire UI includes built-in support for **chart theming** using CSS variables and the `oklch()` color format — giving you full control over chart palettes in both light and dark modes. Themes are defined at the CSS level and can be easily extended or customized.
 
 This guide explains how to:
 
@@ -18,7 +18,7 @@ Whether you're building dashboards, reports, or data apps — theming helps you 
 
 # Adding the Theme CSS File
 
-To use Buridan's chart themes, you need to include the theme CSS in your project. Here's how to do it:
+To use Sapphire's chart themes, you need to include the theme CSS in your project. Here's how to do it:
 
 Create a new file in your Reflex app’s `assets/` folder (if it doesn't exist, create it):
 
@@ -54,7 +54,7 @@ Paste the following content into **theme.css**:
 .theme-purple { ... }
 ```
 
-You can copy the full content from the chart theme [source](https://github.com/buridan-ui/ui/blob/main/assets/css/globals.css).
+You can copy the full content from the chart theme [source](https://github.com/Sapphire-ui/ui/blob/main/assets/css/globals.css).
 
 Import this CSS file in your **rx.App** declaration. Once imported, your app will automatically apply the default :root colors for charts:
 
@@ -80,7 +80,7 @@ For example, in a chart that takes in **fill** prop (such as that in area charts
 fill="var(--chart-1)"
 ```
 
-This will set the fill color to the default value and theme (from inside the **.root**). Buridan ships with multiple pre-defined color themes for charts. To switch themes, apply one of the pre-defined theme system crated inside your **theme.css** file. For example, the following will set the **--chart-1** color to the **red theme** if we apply that theme to an outter component:
+This will set the fill color to the default value and theme (from inside the **.root**). Sapphire ships with multiple pre-defined color themes for charts. To switch themes, apply one of the pre-defined theme system crated inside your **theme.css** file. For example, the following will set the **--chart-1** color to the **red theme** if we apply that theme to an outter component:
 
 --SHOW_CODE_WITH_LANGUAGE(["theme_red_example", "python"])--
 
@@ -98,6 +98,6 @@ Want to create your own chart palette? Just define a new theme block in theme.cs
 
 # Summary
 
-Buridan UI’s theming system gives you centralized control over color palettes, built-in support for light and dark modes, and simple switching between blue, red, green, amber, and purple themes. Designed with CSS-native flexibility, it works seamlessly across components, charts, and any custom UI elements. Add the CSS file once, and your entire app stays visually consistent and easy to style.
+Sapphire UI’s theming system gives you centralized control over color palettes, built-in support for light and dark modes, and simple switching between blue, red, green, amber, and purple themes. Designed with CSS-native flexibility, it works seamlessly across components, charts, and any custom UI elements. Add the CSS file once, and your entire app stays visually consistent and easy to style.
 
 Happy theming! 🎨

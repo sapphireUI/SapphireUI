@@ -12,7 +12,7 @@ Custom tabs component.
 
 Copy the following code into your app directory.
 
---CLI_AND_MANUAL_INSTALLATION(["Tabs", "buridan add component tabs"])--
+--CLI_AND_MANUAL_INSTALLATION(["Tabs", "sapphireui add component tabs"])--
 
 # Usage
 

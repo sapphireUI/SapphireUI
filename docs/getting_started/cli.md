@@ -1,16 +1,16 @@
 ---
 title: "CLI"
-description: "Learn how to use the Buridan UI Command Line Interface to manage components and themes."
+description: "Learn how to use the Sapphire UI Command Line Interface to manage components and themes."
 order: 3
 ---
 
 # Command Line Interface (CLI)
 
-The Buridan UI CLI is a powerful tool designed to streamline the process of adding components, wrapped React components, and themes to your Reflex project. It ensures that all necessary files are placed in the correct locations, making integration seamless.
+The Sapphire UI CLI is a powerful tool designed to streamline the process of adding components, wrapped React components, and themes to your Reflex project. It ensures that all necessary files are placed in the correct locations, making integration seamless.
 
 ## Installation
 
-If you haven't already, install the Buridan UI CLI using pip:
+If you haven't already, install the Sapphire UI CLI using pip:
 
 ```bash
 pip install sapphireui
@@ -24,7 +24,7 @@ All `sapphireui` CLI commands must be run from the root directory of your Reflex
 
 # list
 
-This command displays all available components, wrapped React components, and themes from the Buridan UI library. It's useful for discovering what's available before adding it to your project.
+This command displays all available components, wrapped React components, and themes from the Sapphire UI library. It's useful for discovering what's available before adding it to your project.
 
 ```bash
 sapphireui  list
@@ -55,7 +55,7 @@ Listing available items from repository...
 
 # add
 
-The `sapphireui add` command is used to bring specific items from the Buridan UI library into your project. It has several subcommands for different types of items.
+The `sapphireui add` command is used to bring specific items from the Sapphire UI library into your project. It has several subcommands for different types of items.
 
 ## sapphireui add component <name>
 
@@ -112,7 +112,7 @@ sapphireui add theme blue
 This command will:
 *   Ensure your local component library cache is up-to-date.
 *   Validate that you are in a Reflex project.
-*   Extract the `.theme-blue` and `.theme-blue-dark` CSS rules from the Buridan UI library.
+*   Extract the `.theme-blue` and `.theme-blue-dark` CSS rules from the Sapphire UI library.
 *   Create an `assets/css/` directory in your project root (if it doesn't exist).
 *   Save the extracted CSS into a new file named `blue.css` within `assets/css/`.
 

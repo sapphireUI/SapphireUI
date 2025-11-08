@@ -1,12 +1,12 @@
 ---
 title: "Installation"
-description: "Steps to install and start using Buridan in your project."
+description: "Steps to install and start using Sapphire in your project."
 order: 2
 ---
 
 # Check your Python version
 
-To use Buridan UI components, you need to have **Python version 3.11 or above** installed on your system.
+To use Sapphire UI components, you need to have **Python version 3.11 or above** installed on your system.
 
 ```bash
 python3 --version
@@ -14,7 +14,7 @@ python3 --version
 
 # Install Reflex (if you haven't already)
 
-Buridan UI components are built with Reflex. If you don't have Reflex installed, use the following command:
+Sapphire UI components are built with Reflex. If you don't have Reflex installed, use the following command:
 
 ```bash
 pip install reflex
@@ -28,7 +28,7 @@ reflex --version
 
 # Install the SapphireUI CLI
 
-The Buridan UI CLI allows you to easily add components to your Reflex project.
+The Sapphire UI CLI allows you to easily add components to your Reflex project.
 
 ```bash
 pip install sapphireui
@@ -45,6 +45,6 @@ reflex init my_app_name
 cd my_app_name
 ```
 
-# Using the Buridan UI CLI
+# Using the Sapphire UI CLI
 
-For detailed instructions on how to use the Buridan UI CLI to add components, wrapped React components, and themes to your project, please refer to the [CLI Documentation](/getting-started/cli).
+For detailed instructions on how to use the Sapphire UI CLI to add components, wrapped React components, and themes to your project, please refer to the [CLI Documentation](/getting-started/cli).

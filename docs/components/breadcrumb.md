@@ -12,7 +12,7 @@ Displays the path to the current resource using a hierarchy of links.
 
 Copy the following code into your app directory.
 
---CLI_AND_MANUAL_INSTALLATION(["breadcrumb", "buridan add component breadcrumb"])--
+--CLI_AND_MANUAL_INSTALLATION(["breadcrumb", "sapphireui add component breadcrumb"])--
 
 # Examples
 Below are examples demonstrating how the component can be used.

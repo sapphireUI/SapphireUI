@@ -12,7 +12,7 @@ Custom link component.
 
 Copy the following code into your app directory.
 
---CLI_AND_MANUAL_INSTALLATION(["Link", "buridan add component link"])--
+--CLI_AND_MANUAL_INSTALLATION(["Link", "sapphireui add component link"])--
 
 # Usage
 

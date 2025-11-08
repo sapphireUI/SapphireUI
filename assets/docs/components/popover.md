@@ -12,7 +12,7 @@ Copy the following code into your app directory.
 ### CLI
 
 ```bash
-buridan add component popover
+sapphireui add component popover
 ```
 
 ### Manual Installation
@@ -43,10 +43,18 @@ class ClassNames:
     BACKDROP = ""
     PORTAL = ""
     POSITIONER = ""
-    POPUP = "origin-(--transform-origin) rounded-ui-xl p-1 border border-secondary-a4 bg-secondary-1 shadow-large transition-[transform,scale,opacity] data-[ending-style]:scale-95 data-[starting-style]:scale-95 data-[ending-style]:opacity-0 data-[starting-style]:opacity-0 outline-none min-w-36 flex flex-col gap-2"
+    POPUP = (
+        "bg-[var(--popover)] text-[var(--popover-foreground)] "
+        "data-[state=open]:animate-in data-[state=closed]:animate-out "
+        "data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 "
+        "data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 "
+        "data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 "
+        "data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 "
+        "z-50 w-72 rounded-md border border-input dark:border-[var(--input)] p-4 shadow-md outline-none"
+    )
     ARROW = "data-[side=bottom]:top-[-8px] data-[side=left]:right-[-13px] data-[side=left]:rotate-90 data-[side=right]:left-[-13px] data-[side=right]:-rotate-90 data-[side=top]:bottom-[-8px] data-[side=top]:rotate-180"
-    TITLE = "text-lg font-semibold text-secondary-12"
-    DESCRIPTION = "text-sm text-secondary-11 font-[450]"
+    TITLE = "text-lg font-semibold text-secondary-foreground"
+    DESCRIPTION = "text-sm text-secondary-foreground/80 font-[450]"
     CLOSE = ""
 
 
@@ -395,3 +403,137 @@ Make sure to correctly set your imports relative to the component.
 ```python
 from components.base_ui.popover import popover
 ```
+
+# Example
+A basic popover that appears when the user clicks the trigger button.
+
+
+```python
+def popover_demo():
+    return rx.el.div(
+        popover.root(
+            popover.trigger(render_=button("Click Me", variant="outline")),
+            popover.portal(
+                popover.positioner(
+                    popover.popup(
+                        rx.el.div(
+                            # Header section
+                            rx.el.div(
+                                rx.el.h4(
+                                    "Dimensions",
+                                    class_name="leading-none font-medium",
+                                ),
+                                rx.el.p(
+                                    "Set the dimensions for the layer.",
+                                    class_name="text-[var(--muted-foreground)] text-sm",
+                                ),
+                                class_name="space-y-2",
+                            ),
+                            # Input fields section
+                            rx.el.div(
+                                # Width input
+                                rx.el.div(
+                                    rx.el.label(
+                                        "Width",
+                                        html_for="width",
+                                        class_name="text-sm font-medium",
+                                    ),
+                                    rx.el.input(
+                                        type="text",
+                                        id="width",
+                                        value="100%",
+                                        placeholder="100%",
+                                        class_name=(
+                                            "col-span-2 h-8 w-full rounded-md border border-[var(--input)] "
+                                            "bg-transparent px-3 py-1 text-sm shadow-xs "
+                                            "transition-[color,box-shadow] outline-none "
+                                            "placeholder:text-[var(--muted-foreground)] "
+                                            "focus-visible:border-[var(--ring)] focus-visible:ring-[var(--ring)]/50 focus-visible:ring-[3px] "
+                                            "dark:bg-[var(--input)]/30"
+                                        ),
+                                    ),
+                                    class_name="grid grid-cols-3 items-center gap-4",
+                                ),
+                                # Max width input
+                                rx.el.div(
+                                    rx.el.label(
+                                        "Max. width",
+                                        html_for="maxWidth",
+                                        class_name="text-sm font-medium",
+                                    ),
+                                    rx.el.input(
+                                        type="text",
+                                        id="maxWidth",
+                                        value="300px",
+                                        placeholder="300px",
+                                        class_name=(
+                                            "col-span-2 h-8 w-full rounded-md border border-[var(--input)] "
+                                            "bg-transparent px-3 py-1 text-sm shadow-xs "
+                                            "transition-[color,box-shadow] outline-none "
+                                            "placeholder:text-[var(--muted-foreground)] "
+                                            "focus-visible:border-[var(--ring)] focus-visible:ring-[var(--ring)]/50 focus-visible:ring-[3px] "
+                                            "dark:bg-[var(--input)]/30"
+                                        ),
+                                    ),
+                                    class_name="grid grid-cols-3 items-center gap-4",
+                                ),
+                                # Height input
+                                rx.el.div(
+                                    rx.el.label(
+                                        "Height",
+                                        html_for="height",
+                                        class_name="text-sm font-medium",
+                                    ),
+                                    rx.el.input(
+                                        type="text",
+                                        id="height",
+                                        value="25px",
+                                        placeholder="25px",
+                                        class_name=(
+                                            "col-span-2 h-8 w-full rounded-md border border-[var(--input)] "
+                                            "bg-transparent px-3 py-1 text-sm shadow-xs "
+                                            "transition-[color,box-shadow] outline-none "
+                                            "placeholder:text-[var(--muted-foreground)] "
+                                            "focus-visible:border-[var(--ring)] focus-visible:ring-[var(--ring)]/50 focus-visible:ring-[3px] "
+                                            "dark:bg-[var(--input)]/30"
+                                        ),
+                                    ),
+                                    class_name="grid grid-cols-3 items-center gap-4",
+                                ),
+                                # Max height input
+                                rx.el.div(
+                                    rx.el.label(
+                                        "Max. height",
+                                        html_for="maxHeight",
+                                        class_name="text-sm font-medium",
+                                    ),
+                                    rx.el.input(
+                                        type="text",
+                                        id="maxHeight",
+                                        value="none",
+                                        placeholder="none",
+                                        class_name=(
+                                            "col-span-2 h-8 w-full rounded-md border border-[var(--input)] "
+                                            "bg-transparent px-3 py-1 text-sm shadow-xs "
+                                            "transition-[color,box-shadow] outline-none "
+                                            "placeholder:text-[var(--muted-foreground)] "
+                                            "focus-visible:border-[var(--ring)] focus-visible:ring-[var(--ring)]/50 focus-visible:ring-[3px] "
+                                            "dark:bg-[var(--input)]/30"
+                                        ),
+                                    ),
+                                    class_name="grid grid-cols-3 items-center gap-4",
+                                ),
+                                class_name="grid gap-2",
+                            ),
+                            class_name="grid gap-4",
+                        ),
+                        class_name="w-80",
+                    ),
+                    side="top",
+                ),
+            ),
+        ),
+        class_name="p-8",
+    )
+```
+

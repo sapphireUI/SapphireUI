@@ -12,7 +12,7 @@ Copy the following code into your app directory.
 ### CLI
 
 ```bash
-buridan add component link
+sapphireui add component link
 ```
 
 ### Manual Installation

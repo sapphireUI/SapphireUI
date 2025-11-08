@@ -12,7 +12,7 @@ Combines inputs with prefixes, suffixes, or footers for structured data entry.
 
 Copy the following code into your app directory.
 
---CLI_AND_MANUAL_INSTALLATION(["input_with_addons", "buridan add component input_group"])--
+--CLI_AND_MANUAL_INSTALLATION(["input_with_addons", "sapphireui add component input_group"])--
 
 # Examples
 Below are examples demonstrating how the component can be used.

@@ -1,6 +1,6 @@
 ---
 title: "Dashboard Walkthrough"
-description: "Build a full dashboard UI using Buridan components."
+description: "Build a full dashboard UI using Sapphire components."
 order: 5
 ---
 

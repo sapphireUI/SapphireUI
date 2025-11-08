@@ -12,7 +12,7 @@ Custom Textarea component.
 
 Copy the following code into your app directory.
 
---CLI_AND_MANUAL_INSTALLATION(["Textarea", "buridan add component textarea"])--
+--CLI_AND_MANUAL_INSTALLATION(["Textarea", "sapphireui add component textarea"])--
 
 # Usage
 

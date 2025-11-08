@@ -12,7 +12,7 @@ A lightweight Reflex wrapper for icons from the [`@icons-pack/react-simple-icons
 
 Add the following wrapped react code in Reflex inside your app.
 
---CLI_AND_MANUAL_INSTALLATION(["SimpleIcon", "buridan add wrapped-react simple_icon"])--
+--CLI_AND_MANUAL_INSTALLATION(["SimpleIcon", "sapphireui add wrapped-react simple_icon"])--
 
 # Usage
 

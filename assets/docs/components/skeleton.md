@@ -12,7 +12,7 @@ Copy the following code into your app directory.
 ### CLI
 
 ```bash
-buridan add component skeleton
+sapphireui add component skeleton
 ```
 
 ### Manual Installation
@@ -30,7 +30,7 @@ from ...utils.twmerge import cn
 class ClassNames:
     """Class names for skeleton component."""
 
-    ROOT = "animate-pulse bg-secondary-6"
+    ROOT = "animate-pulse bg-secondary"
 
 
 def skeleton_component(
@@ -83,7 +83,7 @@ def skeleton_card_example():
             ),
             spacing="4",
         ),
-        class_name="flex items-center space-x-4 rounded-md border p-4 w-96",
+        class_name="flex items-center space-x-4 rounded-md border border-input p-4 w-96",
     )
 ```
 

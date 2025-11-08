@@ -12,7 +12,7 @@ Copy the following code into your app directory.
 ### CLI
 
 ```bash
-buridan add component tooltip
+sapphireui add component tooltip
 ```
 
 ### Manual Installation
@@ -41,7 +41,7 @@ class ClassNames:
     """Class names for tooltip components."""
 
     TRIGGER = "inline-flex items-center justify-center"
-    POPUP = "rounded-ui-sm bg-secondary-12 px-2.5 py-1.5 text-balance text-sm font-medium text-secondary-1 shadow-small transition-all duration-150 data-[ending-style]:scale-90 data-[ending-style]:opacity-0 data-[starting-style]:scale-90 data-[starting-style]:opacity-0"
+    POPUP = "rounded-sm bg-secondary px-2.5 py-1.5 text-balance text-sm font-medium text-secondary-1 shadow-sm transition-all duration-150 data-[ending-style]:scale-90 data-[ending-style]:opacity-0 data-[starting-style]:scale-90 data-[starting-style]:opacity-0"
     ARROW = "data-[side=bottom]:top-[-7.5px] data-[side=left]:right-[-12.5px] data-[side=left]:rotate-90 data-[side=right]:left-[-12.5px] data-[side=right]:-rotate-90 data-[side=top]:bottom-[-7.5px] data-[side=top]:rotate-180"
 
 
@@ -351,12 +351,14 @@ Below are examples demonstrating how the component can be used.
 
 ## General
 
+Basic example of a tooltip using the high-level API.
+
 
 ```python
 def tooltip_example():
     """A basic tooltip example."""
     return tooltip(
-        trigger=button("Hover Me"),
+        trigger=button("i", variant="outline"),
         content="This is a tooltip!",
     )
 ```
@@ -364,12 +366,14 @@ def tooltip_example():
 
 ## With Long Content
 
+Demonstrates a tooltip with multi-line or long content.
+
 
 ```python
 def tooltip_with_long_content():
     """Tooltip with longer content."""
     return tooltip(
-        trigger=button("Hover for details"),
+        trigger=button("i", variant="outline"),
         content="This is a much longer tooltip content that provides more detailed information.",
     )
 ```
@@ -377,14 +381,53 @@ def tooltip_with_long_content():
 
 ## Custom Placement
 
+Shows tooltips positioned in non-default locations using side and align settings.
+
 
 ```python
 def tooltip_with_custom_placement():
     """Tooltip with custom placement (e.g., bottom)."""
     return tooltip(
-        trigger=button("Hover for bottom tooltip"),
+        trigger=button("i", variant="outline"),
         content="This tooltip appears at the bottom.",
         side="bottom",
+    )
+```
+
+
+## Low Level Tooltip
+
+Shows how to build a group of icon tooltips using the low-level API.
+
+
+```python
+def tooltip_group_example():
+    """A group of icon buttons with tooltips using the Tooltip API."""
+
+    return rx.el.div(
+        tooltip.provider(
+            *[
+                tooltip.root(
+                    tooltip.trigger(
+                        rx.icon(tag=icon),
+                        class_name="flex size-8 items-center justify-center rounded-sm",
+                    ),
+                    tooltip.portal(
+                        tooltip.positioner(
+                            tooltip.popup(label),
+                            side_offset=10,
+                        )
+                    ),
+                )
+                for icon, label in [
+                    ("bold", "Bold"),
+                    ("italic", "Italic"),
+                    ("underline", "Underline"),
+                    ("strikethrough", "Strikethrough"),
+                ]
+            ],
+        ),
+        class_name="flex !flex-row gap-px rounded-md border border-input bg-background p-0.5",
     )
 ```
 

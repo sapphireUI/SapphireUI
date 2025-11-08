@@ -12,7 +12,7 @@ Custom context menu component.
 
 Copy the following code into your app directory.
 
---CLI_AND_MANUAL_INSTALLATION(["ContextMenu", "buridan add component context_menu"])--
+--CLI_AND_MANUAL_INSTALLATION(["ContextMenu", "sapphireui add component context_menu"])--
 
 # Usage
 

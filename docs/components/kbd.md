@@ -12,7 +12,7 @@ Display keyboard keys and shortcuts with proper styling.
 
 Copy the following code into your app directory.
 
---CLI_AND_MANUAL_INSTALLATION(["kbd", "buridan add component kbd"])--
+--CLI_AND_MANUAL_INSTALLATION(["kbd", "sapphireui add component kbd"])--
 
 # Examples
 Below are examples demonstrating how the component can be used.

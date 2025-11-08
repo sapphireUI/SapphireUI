@@ -24,7 +24,7 @@ class charting_state_example(rx.State):
 
 
 # Creating Your Chart
-The Buridan UI library includes 7 chart types: [Area](/charts/area-charts), [Bar](/charts/bar-charts), [Line](/charts/line-charts), [Pie](/charts/pie-charts), [Doughnut](/charts/doughnut-charts), [Radar](/charts/radar-charts), and [Scatter](/charts/scatter-charts). For this walkthrough, we’ll focus on **Area Charts**. To set up the area chart, import your state class inside the file that will contain your area chart component, then create the following function:
+The Sapphire UI library includes 7 chart types: [Area](/charts/area-charts), [Bar](/charts/bar-charts), [Line](/charts/line-charts), [Pie](/charts/pie-charts), [Doughnut](/charts/doughnut-charts), [Radar](/charts/radar-charts), and [Scatter](/charts/scatter-charts). For this walkthrough, we’ll focus on **Area Charts**. To set up the area chart, import your state class inside the file that will contain your area chart component, then create the following function:
 
 
 ```python
@@ -64,7 +64,7 @@ def cartesian_grid_example():
 - `class_name="opacity-25"`: Low opacity for subtlety.
 
 # Customization: XAxis
-The XAxis component in Reflex allows you to customize the appearance and behavior of the horizontal axis in your chart. It controls things like axis labels, tick marks, and line visibility.The following also applies to the YAxis, however, in order to keep a consistent UI, the buridan charts typically lack the YAxis.
+The XAxis component in Reflex allows you to customize the appearance and behavior of the horizontal axis in your chart. It controls things like axis labels, tick marks, and line visibility.The following also applies to the YAxis, however, in order to keep a consistent UI, the Sapphire charts typically lack the YAxis.
 
 To customize the X Axis, you can use the following code snippet:
 
@@ -96,7 +96,7 @@ To customize the tooltip with a dictionary, use the following code snippet:
 def tooltip_example():
     """A basic tooltip example."""
     return tooltip(
-        trigger=button("Hover Me"),
+        trigger=button("i", variant="outline"),
         content="This is a tooltip!",
     )
 ```

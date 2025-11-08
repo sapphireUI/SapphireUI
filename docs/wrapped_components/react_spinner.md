@@ -12,7 +12,7 @@ A lightweight Reflex wrapper for spinners from the [`react-spinners`](https://ww
 
 Add the following wrapped react code in Reflex inside your app.
 
---CLI_AND_MANUAL_INSTALLATION(["Spinner", "buridan add wrapped-react react_spinner"])--
+--CLI_AND_MANUAL_INSTALLATION(["Spinner", "sapphireui add wrapped-react react_spinner"])--
 
 # Usage
 

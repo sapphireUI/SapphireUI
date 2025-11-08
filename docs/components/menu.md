@@ -12,7 +12,7 @@ Custom menu component.
 
 Copy the following code into your app directory.
 
---CLI_AND_MANUAL_INSTALLATION(["Menu", "buridan add component menu"])--
+--CLI_AND_MANUAL_INSTALLATION(["Menu", "sapphireui add component menu"])--
 
 # Usage
 

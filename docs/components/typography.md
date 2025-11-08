@@ -11,7 +11,7 @@ Styles for headings, paragraphs, lists, and other text elements using Tailwind u
 # Installation
 Copy the following code into your app directory.
 
---CLI_AND_MANUAL_INSTALLATION(["typography_h1", "buridan add component typography"])--
+--CLI_AND_MANUAL_INSTALLATION(["typography_h1", "sapphireui add component typography"])--
 
 # Examples
 Below are examples demonstrating how the component can be used.

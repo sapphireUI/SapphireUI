@@ -711,7 +711,7 @@ wheels = [
 
 [[package]]
 name = "sapphireui"
-version = "0.3.3b0"
+version = "0.3.4b1"
 source = { editable = "." }
 dependencies = [
     { name = "black" },

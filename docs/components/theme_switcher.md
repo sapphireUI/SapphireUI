@@ -12,7 +12,7 @@ Theme switcher component.
 
 Copy the following code into your app directory.
 
---CLI_AND_MANUAL_INSTALLATION(["theme_switcher", "buridan add component theme_switcher"])--
+--CLI_AND_MANUAL_INSTALLATION(["theme_switcher", "sapphireui add component theme_switcher"])--
 
 # Usage
 

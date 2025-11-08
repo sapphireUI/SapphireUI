@@ -12,7 +12,7 @@ A lightweight Reflex wrapper for the [`react-countup`](https://www.npmjs.com/pac
 
 Add the following wrapped react code in Reflex inside your app.
 
---CLI_AND_MANUAL_INSTALLATION(["CountUp", "buridan add wrapped-react react_countup"])--
+--CLI_AND_MANUAL_INSTALLATION(["CountUp", "Sapphire add wrapped-react react_countup"])--
 
 # Usage
 

@@ -12,7 +12,7 @@ Copy the following code into your app directory.
 ### CLI
 
 ```bash
-buridan add component dialog
+sapphireui add component dialog
 ```
 
 ### Manual Installation

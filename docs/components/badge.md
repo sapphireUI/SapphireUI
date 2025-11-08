@@ -12,7 +12,7 @@ A badge component that displays a label.
 
 Copy the following code into your app directory.
 
---CLI_AND_MANUAL_INSTALLATION(["Badge", "buridan add component badge"])--
+--CLI_AND_MANUAL_INSTALLATION(["Badge", "sapphireui add component badge"])--
 
 # Usage
 

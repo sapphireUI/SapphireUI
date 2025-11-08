@@ -12,7 +12,7 @@ Custom Slider component.
 
 Copy the following code into your app directory.
 
---CLI_AND_MANUAL_INSTALLATION(["Slider", "buridan add component slider"])--
+--CLI_AND_MANUAL_INSTALLATION(["Slider", "sapphireui add component slider"])--
 
 # Usage
 

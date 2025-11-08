@@ -12,7 +12,7 @@ Copy the following code into your app directory.
 ### CLI
 
 ```bash
-buridan add component tabs
+sapphireui add component tabs
 ```
 
 ### Manual Installation
@@ -36,9 +36,25 @@ class ClassNames:
     """Class names for tabs components."""
 
     ROOT = "flex flex-col gap-2"
-    LIST = "bg-secondary-3 inline-flex gap-1 p-1 items-center justify-start rounded-ui-md relative z-0"
-    TAB = "h-7 px-1.5 rounded-ui-sm justify-center items-center gap-1.5 inline-flex text-sm font-medium text-secondary-11 cursor-pointer z-[1] hover:text-secondary-12 transition-color text-nowrap data-[selected]:text-secondary-12 data-[disabled]:cursor-not-allowed data-[disabled]:text-secondary-8"
-    INDICATOR = "absolute top-1/2 left-0 -z-1 h-7 w-(--active-tab-width) -translate-y-1/2 translate-x-(--active-tab-left) rounded-ui-sm bg-secondary-1 shadow-small transition-all duration-200 ease-in-out"
+    LIST = "relative bg-muted text-muted-foreground inline-flex h-9 w-fit items-center justify-center rounded-lg p-[3px]"
+    TAB = (
+        "relative z-[2] "
+        "focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:outline-ring "
+        "text-foreground dark:text-muted-foreground "
+        "data-[selected]:text-foreground dark:data-[selected]:text-foreground "
+        "inline-flex h-[calc(100%-1px)] flex-1 items-center justify-center gap-1.5 "
+        "rounded-md border border-transparent px-2 py-1 text-sm font-medium whitespace-nowrap "
+        "transition-all duration-200 ease-in-out "
+        "focus-visible:ring-[3px] focus-visible:outline-1 "
+        "disabled:pointer-events-none disabled:opacity-50 "
+        "[&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"
+    )
+    INDICATOR = (
+        "absolute z-[1] rounded-md bg-background shadow-sm dark:border dark:border-input dark:bg-input/30 "
+        "transition-all duration-200 ease-in-out "
+        "[left:var(--active-tab-left)] [top:var(--active-tab-top)] "
+        "[width:var(--active-tab-width)] [height:var(--active-tab-height)]"
+    )
     PANEL = "flex flex-col gap-2"
 
 
@@ -180,56 +196,56 @@ Make sure to correctly set your imports relative to the component.
 from components.base_ui.tabs import tabs
 ```
 
-# Examples
+# Example
 
 Below are examples demonstrating how the component can be used.
-
-## General
 
 
 ```python
 def tabs_example():
-    """A basic tabs example."""
     return tabs.root(
         tabs.list(
-            tabs.tab("Account", value="account"),
-            tabs.tab("Password", value="password"),
+            tabs.indicator(),
+            tabs.tab(
+                "Overview",
+                value="overview",
+            ),
+            tabs.tab(
+                "Projects",
+                value="projects",
+            ),
+            tabs.tab(
+                "Account",
+                value="account",
+            ),
+            class_name="relative z-0 flex gap-1 px-1 rounded-none border-b border-input",
         ),
         tabs.panel(
-            rx.text("Make changes to your account here."),
+            rx.el.div(
+                rx.el.p("Overview Content"),
+                class_name="relative flex h-32 items-center justify-center",
+            ),
+            value="overview",
+            class_name="relative flex h-32 items-center justify-center -outline-offset-1 outline-blue-800 focus-visible:rounded-md focus-visible:outline focus-visible:outline-2",
+        ),
+        tabs.panel(
+            rx.el.div(
+                rx.el.p("Projects Content"),
+                class_name="relative flex h-32 items-center justify-center",
+            ),
+            value="projects",
+            class_name="relative flex h-32 items-center justify-center -outline-offset-1 outline-blue-800 focus-visible:rounded-md focus-visible:outline focus-visible:outline-2",
+        ),
+        tabs.panel(
+            rx.el.div(
+                rx.el.p("Account Content"),
+                class_name="relative flex h-32 items-center justify-center",
+            ),
             value="account",
+            class_name="relative flex h-32 items-center justify-center -outline-offset-1 outline-blue-800 focus-visible:rounded-md focus-visible:outline focus-visible:outline-2",
         ),
-        tabs.panel(
-            rx.text("Change your password here."),
-            value="password",
-        ),
-        default_value="account",
-        class_name="w-96",
-    )
-```
-
-
-## With Icons
-
-
-```python
-def tabs_with_icons():
-    """Tabs example with icons."""
-    return tabs.root(
-        tabs.list(
-            tabs.tab(rx.icon("user"), "Account", value="account"),
-            tabs.tab(rx.icon("lock"), "Password", value="password"),
-        ),
-        tabs.panel(
-            rx.text("Account settings with icons."),
-            value="account",
-        ),
-        tabs.panel(
-            rx.text("Password settings with icons."),
-            value="password",
-        ),
-        default_value="account",
-        class_name="w-96",
+        default_value="overview",
+        class_name="rounded-md border border-input",
     )
 ```
 

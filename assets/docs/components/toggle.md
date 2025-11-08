@@ -12,7 +12,7 @@ Copy the following code into your app directory.
 ### CLI
 
 ```bash
-buridan add component toggle
+sapphireui add component toggle
 ```
 
 ### Manual Installation
@@ -31,7 +31,7 @@ from ..base_ui import PACKAGE_NAME, BaseUIComponent
 class ClassNames:
     """Class names for toggle components."""
 
-    ROOT = "flex size-8 items-center justify-center rounded-ui-sm text-secondary-11 select-none hover:bg-secondary-3 focus-visible:bg-none active:bg-secondary-4 data-[pressed]:text-secondary-12 data-[pressed]:bg-secondary-4 transition-colors"
+    ROOT = "p-1.5 inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium hover:bg-muted hover:text-muted-foreground disabled:pointer-events-none disabled:opacity-50 data-[pressed]:bg-accent data-[pressed]:text-accent-foreground [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 [&_svg]:shrink-0 focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] outline-none transition-[color,box-shadow] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive whitespace-nowrap"
 
 
 class ToggleBaseComponent(BaseUIComponent):
@@ -96,16 +96,25 @@ from components.base_ui.toggle import toggle
 Below are examples demonstrating how the component can be used.
 
 ## General
+A simple toggle component that can be pressed to switch between active and inactive states.
 
 
 ```python
 def toggle_example():
-    """A basic toggle example."""
-    return toggle(rx.icon("bold"))
+    return toggle(
+        rx.icon("bookmark"),
+        "Bookmark",
+        class_name=(
+            "data-[pressed]:bg-transparent "
+            "data-[pressed]:[&_svg]:fill-blue-500 "
+            "data-[pressed]:[&_svg]:stroke-blue-500"
+        ),
+    )
 ```
 
 
 ## Pressed State
+Demonstrates a toggle that starts in the pressed state by default.
 
 
 ```python
@@ -116,6 +125,7 @@ def toggle_pressed():
 
 
 ## Disabled
+Shows a toggle that is disabled and cannot be interacted with.
 
 
 ```python

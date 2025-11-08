@@ -12,7 +12,7 @@ Copy the following code into your app directory.
 ### CLI
 
 ```bash
-buridan add component toggle_group
+sapphireui add component toggle_group
 ```
 
 ### Manual Installation
@@ -35,7 +35,7 @@ LiteralOrientation = Literal["horizontal", "vertical"]
 class ClassNames:
     """Class names for toggle group components."""
 
-    ROOT = "inline-flex items-center gap-1 p-1 rounded-ui-md bg-secondary-3 data-[orientation=vertical]:flex-col data-[disabled]:opacity-50 data-[disabled]:cursor-not-allowed"
+    ROOT = ""
 
 
 class ToggleGroupBaseComponent(BaseUIComponent):
@@ -64,7 +64,7 @@ class ToggleGroupRoot(ToggleGroupBaseComponent):
     on_value_change: EventHandler[passthrough_event_spec(list[str | int], dict)]
 
     # When false only one item in the group can be pressed. If any item in the group becomes pressed, the others will become unpressed. When true multiple items can be pressed. Defaults to False.
-    toggle_multiple: Var[bool]
+    multiple: Var[bool]
 
     # Whether the toggle group should ignore user interaction. Defaults to False.
     disabled: Var[bool]
@@ -104,36 +104,68 @@ Below are examples demonstrating how the component can be used.
 
 ## General
 
+A basic toggle group with single-selection mode, allowing only one active toggle at a time.
+
 
 ```python
 def toggle_group_example():
     """A basic toggle group example."""
     return toggle_group(
-        toggle(rx.icon("bold"), value="bold"),
-        toggle(rx.icon("italic"), value="italic"),
-        toggle(rx.icon("underline"), value="underline"),
+        toggle(
+            rx.icon("bold"),
+            value="bold",
+            class_name="flex size-8 items-center justify-center rounded-sm active:bg-secondary text-muted-foreground active:text-foreground",
+        ),
+        toggle(
+            rx.icon("italic"),
+            value="italic",
+            class_name="flex size-8 items-center justify-center rounded-sm active:bg-secondary text-muted-foreground active:text-foreground",
+        ),
+        toggle(
+            rx.icon("underline"),
+            value="underline",
+            class_name="flex size-8 items-center justify-center rounded-sm active:bg-secondary text-muted-foreground active:text-foreground",
+        ),
         default_value=["bold"],
+        class_name="flex gap-px rounded-md border border-input bg-background p-0.5",
     )
 ```
 
 
 ## Multiple Selection
 
+Allows selecting multiple toggles simultaneously by enabling the multiple property.
+
 
 ```python
 def toggle_group_multiple():
     """A toggle group example allowing multiple selections."""
     return toggle_group(
-        toggle(rx.icon("align-left"), value="left"),
-        toggle(rx.icon("align-center"), value="center"),
-        toggle(rx.icon("align-right"), value="right"),
-        toggle_multiple=True,
+        toggle(
+            rx.icon("align-left"),
+            value="left",
+            class_name="flex size-8 items-center justify-center rounded-sm active:bg-secondary text-muted-foreground active:text-foreground",
+        ),
+        toggle(
+            rx.icon("align-center"),
+            value="center",
+            class_name="flex size-8 items-center justify-center rounded-sm active:bg-secondary text-muted-foreground active:text-foreground",
+        ),
+        toggle(
+            rx.icon("align-right"),
+            value="right",
+            class_name="flex size-8 items-center justify-center rounded-sm active:bg-secondary text-muted-foreground active:text-foreground",
+        ),
         default_value=["left", "right"],
+        multiple=True,
+        class_name="flex gap-px rounded-md border border-input bg-background p-0.5",
     )
 ```
 
 
 ## Disabled
+
+Demonstrates a toggle group where all items are disabled and non-interactive.
 
 
 ```python

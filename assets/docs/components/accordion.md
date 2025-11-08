@@ -12,7 +12,7 @@ Copy the following code into your app directory.
 ### CLI
 
 ```bash
-buridan add component accordion
+sapphireui add component accordion
 ```
 
 ### Manual Installation

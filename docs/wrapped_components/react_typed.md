@@ -12,7 +12,7 @@ A lightweight Reflex wrapper for the [`react-typed`](https://www.npmjs.com/packa
 
 Add the following wrapped react code in Reflex inside your app.
 
---CLI_AND_MANUAL_INSTALLATION(["Typed", "buridan add wrapped-react react_typed"])--
+--CLI_AND_MANUAL_INSTALLATION(["Typed", "sapphireui add wrapped-react react_typed"])--
 
 # Usage
 

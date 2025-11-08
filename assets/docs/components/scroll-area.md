@@ -12,7 +12,7 @@ Copy the following code into your app directory.
 ### CLI
 
 ```bash
-buridan add component scroll_area
+sapphireui add component scroll_area
 ```
 
 ### Manual Installation
@@ -42,8 +42,8 @@ class ClassNames:
     SCROLLBAR_BASE = "flex touch-none p-0.5 opacity-0 transition-[colors,opacity] delay-200 select-none data-hovering:opacity-100 data-hovering:delay-0 data-hovering:duration-100 data-scrolling:opacity-100 data-scrolling:delay-0 data-scrolling:duration-100"
     SCROLLBAR_VERTICAL = "w-2"
     SCROLLBAR_HORIZONTAL = "h-2"
-    THUMB = "w-full rounded-full bg-secondary-a5"
-    CORNER = "bg-secondary-a3"
+    THUMB = "w-full rounded-full bg-secondary"
+    CORNER = "bg-secondary"
 
 
 class ScrollAreaBaseComponent(BaseUIComponent):
@@ -245,11 +245,14 @@ Below are examples demonstrating how the component can be used.
 ```python
 def scroll_area_example():
     """A basic scroll area example."""
-    return scroll_area(
-        rx.box(
-            *[rx.text(f"Item {i}", class_name="p-2") for i in range(50)],
+    return rx.el.div(
+        scroll_area(
+            rx.el.div(
+                *[rx.el.p(f"buridan v0.{i}", class_name="p-2") for i in range(30)],
+            ),
+            class_name="h-72 w-48 rounded-md border border-input",
         ),
-        class_name="h-72 w-48 rounded-md border",
+        class_name="py-6",
     )
 ```
 

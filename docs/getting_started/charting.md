@@ -1,6 +1,6 @@
 ---
 title: "Charting Walkthrough"
-description: "Step-by-step guide to building charts using Buridan."
+description: "Step-by-step guide to building charts using Sapphire."
 order: 4
 ---
 
@@ -16,7 +16,7 @@ Most charts in this guide use static data as an example. This approach helps kee
 --SHOW_CODE_WITH_LANGUAGE(["charting_state_example", "python"])--
 
 # Creating Your Chart
-The Buridan UI library includes 7 chart types: [Area](/charts/area-charts), [Bar](/charts/bar-charts), [Line](/charts/line-charts), [Pie](/charts/pie-charts), [Doughnut](/charts/doughnut-charts), [Radar](/charts/radar-charts), and [Scatter](/charts/scatter-charts). For this walkthrough, we’ll focus on **Area Charts**. To set up the area chart, import your state class inside the file that will contain your area chart component, then create the following function:
+The Sapphire UI library includes 7 chart types: [Area](/charts/area-charts), [Bar](/charts/bar-charts), [Line](/charts/line-charts), [Pie](/charts/pie-charts), [Doughnut](/charts/doughnut-charts), [Radar](/charts/radar-charts), and [Scatter](/charts/scatter-charts). For this walkthrough, we’ll focus on **Area Charts**. To set up the area chart, import your state class inside the file that will contain your area chart component, then create the following function:
 
 --SHOW_CODE_WITH_LANGUAGE(["area_chart_example", "python"])--
 
@@ -35,7 +35,7 @@ To add a customized Cartesian grid to your chart, use the following code snippet
 - `class_name="opacity-25"`: Low opacity for subtlety.
 
 # Customization: XAxis
-The XAxis component in Reflex allows you to customize the appearance and behavior of the horizontal axis in your chart. It controls things like axis labels, tick marks, and line visibility.The following also applies to the YAxis, however, in order to keep a consistent UI, the buridan charts typically lack the YAxis.
+The XAxis component in Reflex allows you to customize the appearance and behavior of the horizontal axis in your chart. It controls things like axis labels, tick marks, and line visibility.The following also applies to the YAxis, however, in order to keep a consistent UI, the Sapphire charts typically lack the YAxis.
 
 To customize the X Axis, you can use the following code snippet:
 
