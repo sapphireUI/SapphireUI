@@ -37,7 +37,18 @@ jobs:
       - name: Verify publication
         run: |
           PACKAGE_NAME="sapphireui"
-          VERSION="${{ github.event.release.tag_name }}"
+          RAW_VERSION="${{ github.event.release.tag_name }}"
+          # If the release tag includes the package name (e.g. 'sapphireui0.4.0' or 'sapphireui-v0.4.0'),
+          # strip the package name. Then strip a leading 'v' if present.
+          VERSION="${RAW_VERSION#${PACKAGE_NAME}}"
+          VERSION="${VERSION#-}"
+          VERSION="${VERSION#v}"
+          # Fallback to raw tag if stripping produced an empty string
+          if [ -z "$VERSION" ]; then
+            VERSION="$RAW_VERSION"
+          fi
+
+          echo "Installing ${PACKAGE_NAME}==${VERSION} for verification"
           pip install "${PACKAGE_NAME}==${VERSION}"
           python -c "import sapphireui; print(sapphireui.__version__)"
         env:
