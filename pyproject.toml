@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "sapphireui"
-version = "0.3.5"
+version = "0.3.6"
 description = "SapphireUI – The UI Library for Reflex Developers"
 authors = [{ name = "sumangal karan", email = "sumangalkaran44@gmail.com" }]
 readme = "README.md"
