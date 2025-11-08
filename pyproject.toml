@@ -2,11 +2,17 @@
 requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
 
+
+[project.urls]
+Homepage = "https://github.com/sapphireUI/SapphireUI"
+Documentation = "https://sapphireui-blue-book.reflex.run/docs/getting-started/introduction"
+Source = "https://github.com/sapphireUI/SapphireUI"
+Issues = "https://github.com/sapphireUI/SapphireUI/issues"
 [project]
 name = "sapphireui"
-version = "0.3.6"
+version = "0.4.0"
 description = "SapphireUI – The UI Library for Reflex Developers"
-authors = [{ name = "sumangal karan", email = "sumangalkaran44@gmail.com" }]
+authors = [{ name = "sapphireUI", email = "sapphireui00@gmail.com" }]
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
