@@ -50,7 +50,14 @@ jobs:
 
           echo "Installing ${PACKAGE_NAME}==${VERSION} for verification"
           pip install "${PACKAGE_NAME}==${VERSION}"
-          python -c "import sapphireui; print(sapphireui.__version__)"
+          # Use importlib.metadata to read the installed distribution version
+          python - <<'PY'
+          from importlib.metadata import version, PackageNotFoundError
+          try:
+              print(version('sapphireui'))
+          except PackageNotFoundError:
+              raise SystemExit('sapphireui distribution not found after install')
+          PY
         env:
           PYPI_API_TOKEN: ${{ secrets.PYPI_API_TOKEN }}
       - name: Clean up
