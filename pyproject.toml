@@ -10,7 +10,7 @@ Source = "https://github.com/sapphireUI/SapphireUI"
 Issues = "https://github.com/sapphireUI/SapphireUI/issues"
 [project]
 name = "sapphireui"
-version = "0.4.2"
+version = "0.4.3"
 description = "SapphireUI – The UI Library for Reflex Developers"
 authors = [{ name = "sapphireUI", email = "sapphireui00@gmail.com" }]
 readme = "README.md"

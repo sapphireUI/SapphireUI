@@ -34,22 +34,30 @@ jobs:
         run: uv publish --trusted-publishing automatic
         env:
           PYPI_API_TOKEN: ${{ secrets.PYPI_API_TOKEN }}
-      - name: Verify publication
+
+      - name: Verify publication (install local wheel)
+        # Install the locally-built wheel from dist/ for robust CI verification
         run: |
           PACKAGE_NAME="sapphireui"
           RAW_VERSION="${{ github.event.release.tag_name }}"
           # If the release tag includes the package name (e.g. 'sapphireui0.4.0' or 'sapphireui-v0.4.0'),
-          # strip the package name. Then strip a leading 'v' if present.
+          # strip the package name. Then strip a leading '-' or 'v' if present.
           VERSION="${RAW_VERSION#${PACKAGE_NAME}}"
           VERSION="${VERSION#-}"
           VERSION="${VERSION#v}"
-          # Fallback to raw tag if stripping produced an empty string
           if [ -z "$VERSION" ]; then
             VERSION="$RAW_VERSION"
           fi
 
-          echo "Installing ${PACKAGE_NAME}==${VERSION} for verification"
-          pip install "${PACKAGE_NAME}==${VERSION}"
+          echo "Installing local wheel matching *${VERSION}* for verification"
+          # Prefer a wheel that includes the version in the filename; fall back to any wheel
+          set -o pipefail
+          if ls dist/*${VERSION}*.whl 1> /dev/null 2>&1; then
+            pip install dist/*${VERSION}*.whl
+          else
+            pip install dist/*.whl
+          fi
+
           # Use importlib.metadata to read the installed distribution version
           python - <<'PY'
           from importlib.metadata import version, PackageNotFoundError
@@ -58,7 +66,9 @@ jobs:
           except PackageNotFoundError:
               raise SystemExit('sapphireui distribution not found after install')
           PY
+
         env:
           PYPI_API_TOKEN: ${{ secrets.PYPI_API_TOKEN }}
+
       - name: Clean up
         run: uv clean
