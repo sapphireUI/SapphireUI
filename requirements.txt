@@ -1,2 +1,2 @@
-reflex==0.8.5
+reflex==0.8.20
 pre-commit>=4.2.0
