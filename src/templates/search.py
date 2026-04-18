@@ -88,9 +88,11 @@ def search_content():
                 hooks.search_query.value,
                 result_list(
                     hooks.search_items_cs.value.to(list[dict[str, str]]),
-                    lambda v: v["title"]
-                    .lower()
-                    .contains(hooks.search_query.value.to(str).lower()),
+                    lambda v: (
+                        v["title"]
+                        .lower()
+                        .contains(hooks.search_query.value.to(str).lower())
+                    ),
                 ),
                 result_list(
                     hooks.search_items_cs.value.to(list[dict[str, str]]),
