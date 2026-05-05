@@ -25,12 +25,12 @@ class DocParser:
             for directory in dynamic_load_dirs:
                 self.components_registry.update(self._dynamic_load(directory))
 
-        self.command_handlers = {
-            DocParserCommands.DEMO_AND_CODE_SINGLE_FILE: self._handle_demo_and_code_single_file,
-            DocParserCommands.SHOW_CODE_WITH_LANGUAGE: self._handle_show_code_with_language,
-            DocParserCommands.DEMO_AND_SINGLE_FUNCTION: self._handle_demo_and_single_function,
-            DocParserCommands.FULL_SOURCE_PAGE_OF_COMPONENT: self._handel_full_source_page_of_component,
-            DocParserCommands.CLI_AND_MANUAL_INSTALLATION: self._handle_cli_and_manual_installation,
+        self.command_handlers: Dict[str, Callable[[str | None], rx.Component]] = {
+            DocParserCommands.DEMO_AND_CODE_SINGLE_FILE.value.lower(): self._handle_demo_and_code_single_file,
+            DocParserCommands.SHOW_CODE_WITH_LANGUAGE.value.lower(): self._handle_show_code_with_language,
+            DocParserCommands.DEMO_AND_SINGLE_FUNCTION.value.lower(): self._handle_demo_and_single_function,
+            DocParserCommands.FULL_SOURCE_PAGE_OF_COMPONENT.value.lower(): self._handel_full_source_page_of_component,
+            DocParserCommands.CLI_AND_MANUAL_INSTALLATION.value.lower(): self._handle_cli_and_manual_installation,
         }
 
     def parse_and_render(self, content: str) -> List[rx.Component]:

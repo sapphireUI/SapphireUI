@@ -106,7 +106,7 @@ def checkout_form():
                                     ),
                                     rx.el.select(
                                         rx.el.option(
-                                            "MM", value="", disabled=True, selected=True
+                                            "MM", value="", disabled=True
                                         ),
                                         rx.el.option("01", value="01"),
                                         rx.el.option("02", value="02"),
@@ -121,6 +121,7 @@ def checkout_form():
                                         rx.el.option("11", value="11"),
                                         rx.el.option("12", value="12"),
                                         id="checkout-7j9-exp-month-ts6",
+                                        default_value="",
                                         class_name="border-input data-[placeholder]:text-muted-foreground dark:bg-input/30 flex w-full items-center justify-between gap-2 rounded-md border bg-transparent px-3 py-2 text-sm shadow-xs transition-[color,box-shadow] outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50 h-9",
                                     ),
                                     role="group",
@@ -140,7 +141,6 @@ def checkout_form():
                                             "YYYY",
                                             value="",
                                             disabled=True,
-                                            selected=True,
                                         ),
                                         rx.el.option("2024", value="2024"),
                                         rx.el.option("2025", value="2025"),
@@ -149,6 +149,7 @@ def checkout_form():
                                         rx.el.option("2028", value="2028"),
                                         rx.el.option("2029", value="2029"),
                                         id="checkout-7j9-exp-year-f59",
+                                        default_value="",
                                         class_name="border-input data-[placeholder]:text-muted-foreground dark:bg-input/30 flex w-full items-center justify-between gap-2 rounded-md border bg-transparent px-3 py-2 text-sm shadow-xs transition-[color,box-shadow] outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50 h-9",
                                     ),
                                     role="group",
@@ -194,7 +195,7 @@ def checkout_form():
                                 rx.el.input(
                                     type="checkbox",
                                     id="checkout-7j9-same-as-shipping-wgm",
-                                    checked=True,
+                                    default_checked=True,
                                     class_name="peer border-input dark:bg-input/30 size-4 shrink-0 rounded-[4px] border shadow-xs transition-shadow outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50",
                                 ),
                                 rx.el.label(
@@ -367,6 +368,7 @@ def checkbox_button(id_val: str, value: str, label: str, is_checked: bool, on_cl
                 type="checkbox",
                 value=value,
                 checked=is_checked,
+                    read_only=True,
                 aria_hidden="true",
                 tab_index=-1,
                 style={
@@ -912,6 +914,7 @@ def component_two():
                         type="radio",
                         role="radio",
                         checked=selected.value == "kubernetes",
+                        read_only=True,
                         data_state=rx.cond(
                             selected.value == "kubernetes", "checked", "unchecked"
                         ),
@@ -953,6 +956,7 @@ def component_two():
                         type="radio",
                         role="radio",
                         checked=selected.value == "vm",
+                        read_only=True,
                         data_state=rx.cond(
                             selected.value == "vm", "checked", "unchecked"
                         ),

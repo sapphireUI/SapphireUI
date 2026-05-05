@@ -1,10 +1,11 @@
 import reflex as rx
 from reflex.plugins.shared_tailwind import TailwindConfig
+from reflex.plugins.sitemap import SitemapPlugin
 
 config = rx.Config(
     app_name="src",
     show_built_with_reflex=False,
-    disable_plugins=["reflex.plugins.sitemap.SitemapPlugin"],
+    disable_plugins=[SitemapPlugin],
     plugins=[
         rx.plugins.TailwindV4Plugin(
             TailwindConfig(
